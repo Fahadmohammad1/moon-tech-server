@@ -10,7 +10,7 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-const uri = `mongodb+srv://moonUser:${process.env.MOON_PASS}@cluster0.uxnvnzb.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://moonUser:AaTvo4cRtHhGNdtH@cluster0.uxnvnzb.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
