@@ -52,7 +52,7 @@ const run = async () => {
     app.post("/blog", async (req, res) => {
       const blog = req.body;
 
-      const result = await productCollection.insertOne(blog);
+      const result = await blogCollection.insertOne(blog);
 
       res.send(result);
     });
