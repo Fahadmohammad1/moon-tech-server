@@ -49,6 +49,16 @@ const run = async () => {
       res.send(result);
     });
 
+    app.post("/blog", async (req, res) => {
+      const blog = req.body;
+
+      const result = await productCollection.insertOne(blog);
+
+      res.send(result);
+    });
+
+    //DELETE
+
     app.delete("/product/:id", async (req, res) => {
       const id = req.params.id;
 
