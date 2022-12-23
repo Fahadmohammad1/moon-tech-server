@@ -22,6 +22,10 @@ const run = async () => {
     const db = client.db("product");
     const productCollection = db.collection("productCollection");
 
+    const blogDb = client.db("blogCollection");
+    const blogCollection = blogDb.collection("blogs");
+
+    // GET
     app.get("/products", async (req, res) => {
       const cursor = productCollection.find({});
       const product = await cursor.toArray();
@@ -29,6 +33,14 @@ const run = async () => {
       res.send({ status: true, data: product });
     });
 
+    app.get("/blogs", async (req, res) => {
+      const cursor = blogCollection.find({});
+      const blog = await cursor.toArray();
+
+      res.send({ status: true, data: blog });
+    });
+
+    //POST
     app.post("/product", async (req, res) => {
       const product = req.body;
 
